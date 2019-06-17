@@ -12,7 +12,7 @@ public class App
 
         Animal pet = new Animal();
         pet.petName = "Fluffy";
-        pet.type = "Kitty";
+        pet.type = "cat";
         pet.petAge = 2;
         pet.happyness = 7;
         pet.healthLevel = 5;
@@ -21,7 +21,7 @@ public class App
 
 
         PetOwner petOwner = new PetOwner();
-        petOwner.ownerName = " Virgiliu Guraliuc ";
+        petOwner.ownerName = " Virgiliu ";
         petOwner.availableCash = 100;
 
         Food petFood = new Food();
@@ -38,11 +38,18 @@ public class App
 
         PetDoctor petDoctor = new PetDoctor();
         petDoctor.PetDoctorName = " Dr. Johnson ";
-        petDoctor.Speciality = " felines ";
+        petDoctor.Speciality = " feline specialist ";
         petDoctor.skilllevel = 4 ;
         petDoctor.medicinalCost = 1;
 
 
+        System.out.println( " The animal is a " + pet.type +" and its name is " + pet.petName+"."  );
+        System.out.println( " "+ pet.petName + " is "+ pet.petAge + " years old and enjoys " + pet.nameFavoriteActivity +"." );
+        System.out.println( " The owner, " + petOwner.ownerName + " and loves " + pet.petName + " very much. " );
+        System.out.println( " Every time the " + pet.type + " is hungry " + petOwner.ownerName + " feeds "+pet.petName + "" + pet.nameFavoriteFood + "," + " which is its favorite food.");
+        System.out.println( " Lately, " + pet.petName +" has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" +petDoctor.Speciality +".");
+
+        double medicalcare = petDoctor.medicalcare(4,5,1);
 
 
 
