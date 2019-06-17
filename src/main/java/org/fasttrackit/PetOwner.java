@@ -1,6 +1,6 @@
 package org.fasttrackit;
 
-public class Owner {
+public class PetOwner {
     String ownerName;
     double availableCash;
 
