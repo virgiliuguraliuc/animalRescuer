@@ -17,6 +17,7 @@ public class App {
         pet.healthLevel = 5;
         pet.nameFavoriteFood = " kitkat ";
         pet.nameFavoriteActivity = " jumping after birds ";
+        pet.hungerLevel = 2;
 
 
         PetOwner petOwner = new PetOwner();
@@ -33,13 +34,20 @@ public class App {
 
         RecreationalActivity fun = new RecreationalActivity();
         fun.RecreationalActivityName = "jumping after birds";
-        fun.jumpedafterbirds = true;
+        fun.fun = true;
 
         PetDoctor petDoctor = new PetDoctor();
         petDoctor.PetDoctorName = " Dr. Johnson ";
         petDoctor.Speciality = " feline specialist ";
         petDoctor.skilllevel = 4;
         petDoctor.medicinalCost = 1;
+
+        PetHouse catHouse = new PetHouse();
+        catHouse.petHouseType = "cardboardBox";
+        catHouse.petHouseName = "CerealBox";
+        catHouse.petHouseCost = 0;
+        catHouse.getPetHouseHappynessLevel = 1;
+
 
 
         System.out.println(" The animal is a " + pet.type + " and its name is " + pet.petName + ".");
@@ -48,6 +56,8 @@ public class App {
         System.out.println(" Every time the " + pet.type + " is hungry " + petOwner.ownerName + " feeds " + pet.petName + "" + pet.nameFavoriteFood + "," + " which is its favorite food.");
         System.out.println(" Lately, " + pet.petName + " has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" + petDoctor.Speciality + ".");
         System.out.println(" Pet food expires on " + petFood.expiryDate);
+
+
 
         double medicalcare = petDoctor.medicalcare(4, 5, 1);
 
