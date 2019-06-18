@@ -62,8 +62,31 @@ public class App {
         double medicalcare = petDoctor.medicalcare(4, 5, 1);
 
 
-//adaugam mai incolo si preturile la mancare
+
+        remainingCash();
+        remainingCash2();
+
+    }
+
+    public static void remainingCash() {
+        double result;
+        double a = 100;
+        double b = 1.25;
+        result = a-b;
+        System.out.println( " Remaing cash is " + result + " $. ");
 
 
     }
-}
+
+    public static void remainingCash2() {
+
+        System.out.println( " I am testing things " );
+    }
+
+
+      }
+
+
+
+
+
