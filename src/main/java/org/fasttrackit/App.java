@@ -1,8 +1,10 @@
 package org.fasttrackit;
 
+import java.net.HttpURLConnection;
 import java.time.LocalDate;
 
 import static org.fasttrackit.Game.Mesaj;
+import static org.fasttrackit.Animal.Hunger;
 
 /**
  * Hello world!
@@ -69,7 +71,10 @@ public class App {
         remainingCash2();
 
         Mesaj();
+        Hunger(1,2,1);
+        Hunger(pet.getPetAge(),pet.getHappyness(),pet.getHealthLevel());
 
+        System.out.println();
     }
 
     public static void remainingCash() {
