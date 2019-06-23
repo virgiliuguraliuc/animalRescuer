@@ -2,6 +2,8 @@ package org.fasttrackit;
 
 import java.time.LocalDate;
 
+import static org.fasttrackit.Game.Mesaj;
+
 /**
  * Hello world!
  *
@@ -10,14 +12,14 @@ public class App {
     public static void main(String[] args) {
 
         Animal pet = new Animal();
-        pet.petName = "Fluffy";
-        pet.type = "cat";
-        pet.petAge = 2;
-        pet.happyness = 7;
-        pet.healthLevel = 5;
-        pet.nameFavoriteFood = " kitkat ";
-        pet.nameFavoriteActivity = " jumping after birds ";
-        pet.hungerLevel = 2;
+        pet.setPetName("Fluffy");
+        pet.setType("cat");
+        pet.setPetAge(2);
+        pet.setHappyness(7);
+        pet.setHealthLevel(5);
+        pet.setNameFavoriteFood("kitkat");
+        pet.setNameFavoriteActivity("jumping after birds");
+        pet.setHungerLevel(2);
 
 
         PetOwner petOwner = new PetOwner();
@@ -50,11 +52,11 @@ public class App {
 
 
 
-        System.out.println(" The animal is a " + pet.type + " and its name is " + pet.petName + ".");
-        System.out.println(" " + pet.petName + " is " + pet.petAge + " years old and enjoys " + pet.nameFavoriteActivity + ".");
-        System.out.println(" The owner, " + petOwner.ownerName + " and loves " + pet.petName + " very much. ");
-        System.out.println(" Every time the " + pet.type + " is hungry " + petOwner.ownerName + " feeds " + pet.petName + "" + pet.nameFavoriteFood + "," + " which is its favorite food.");
-        System.out.println(" Lately, " + pet.petName + " has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" + petDoctor.Speciality + ".");
+        System.out.println(" The animal is a " + pet.getType() + " and its name is " + pet.getPetName()+ ".");
+        System.out.println(" " + pet.getPetName() + " is " + pet.getPetAge() + " years old and enjoys " + pet.getNameFavoriteActivity() + ".");
+        System.out.println(" The owner, " + petOwner.ownerName + " and loves " + pet.getType() + " very much. ");
+        System.out.println(" Every time the " + pet.getPetName() + " is hungry " + petOwner.ownerName + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
+        System.out.println(" Lately, " + pet.getPetName() + " has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" + petDoctor.Speciality + ".");
         System.out.println(" Pet food expires on " + petFood.expiryDate);
 
 
@@ -65,6 +67,8 @@ public class App {
 
         remainingCash();
         remainingCash2();
+
+        Mesaj();
 
     }
 
@@ -84,7 +88,12 @@ public class App {
     }
 
 
-      }
+
+
+
+
+
+}
 
 
 
