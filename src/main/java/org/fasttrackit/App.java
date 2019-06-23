@@ -55,7 +55,7 @@ public class App {
         System.out.println(" The animal is a " + pet.getType() + " and its name is " + pet.getPetName()+ ".");
         System.out.println(" " + pet.getPetName() + " is " + pet.getPetAge() + " years old and enjoys " + pet.getNameFavoriteActivity() + ".");
         System.out.println(" The owner, " + petOwner.ownerName + " and loves " + pet.getType() + " very much. ");
-        System.out.println(" Every time the " + pet.getPetName() + " is hungry " + petOwner.ownerName + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
+        System.out.println(" Every time the " + pet.getType() + " is hungry " + petOwner.ownerName + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
         System.out.println(" Lately, " + pet.getPetName() + " has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" + petDoctor.Speciality + ".");
         System.out.println(" Pet food expires on " + petFood.expiryDate);
 
