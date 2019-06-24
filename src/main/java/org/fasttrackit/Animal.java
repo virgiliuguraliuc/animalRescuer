@@ -79,14 +79,16 @@ public class Animal {
     public void setNameFavoriteActivity(String nameFavoriteActivity) {
         this.nameFavoriteActivity = nameFavoriteActivity;
     }
-
+//hunger method
     public static double Hunger (double hungermodifier, double exertion, double time) {
         hungermodifier = 1;
         double hungerLevel = exertion * time * hungermodifier;
         System.out.println("hunger level is " + hungerLevel);
         return hungerLevel;
     }
+//happy method
 
 
+//health method
 
 }

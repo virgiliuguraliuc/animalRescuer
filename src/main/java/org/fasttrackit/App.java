@@ -25,26 +25,26 @@ public class App {
 
 
         PetOwner petOwner = new PetOwner();
-        petOwner.ownerName = " Virgiliu ";
-        petOwner.availableCash = 100;
+        petOwner.setOwnerName("Virgiliu");
+        petOwner.setAvailableCash(100);
 
         Food petFood = new Food();
-        petFood.FoodName = " kitkat ";
-        petFood.FoodPrice = 1.2;
-        petFood.FoodQuantity = 5;
-        petFood.createdDate = LocalDate.of(2018, 6, 13);
-        petFood.expiryDate = LocalDate.of(2019, 7, 10);
-        petFood.inStock = true;
+        petFood.setFoodName("KITKAT");
+        petFood.setFoodPrice(1.2);
+        petFood.setFoodQuantity(5);
+        petFood.setCreatedDate(2018,8,1);                //LocalDate.of(2018, 6, 13));
+        petFood.setExpiryDate(2019,8, 2);
+        petFood.setInStock(true);
 
         RecreationalActivity fun = new RecreationalActivity();
-        fun.RecreationalActivityName = "jumping after birds";
-        fun.fun = true;
+        fun.setRecreationalActivityName("jumping after birds");
+        fun.setFun(true);
 
         PetDoctor petDoctor = new PetDoctor();
-        petDoctor.PetDoctorName = " Dr. Johnson ";
-        petDoctor.Speciality = " feline specialist ";
-        petDoctor.skilllevel = 4;
-        petDoctor.medicinalCost = 1;
+        petDoctor.setPetDoctorName("Dr. Johnson");
+        petDoctor.setSpeciality(" feline specialist ");
+        petDoctor.setSkilllevel(4);
+        petDoctor.setMedicinalCost(1);
 
         PetHouse catHouse = new PetHouse();
         catHouse.petHouseType = "cardboardBox";
@@ -56,10 +56,10 @@ public class App {
 
         System.out.println(" The animal is a " + pet.getType() + " and its name is " + pet.getPetName()+ ".");
         System.out.println(" " + pet.getPetName() + " is " + pet.getPetAge() + " years old and enjoys " + pet.getNameFavoriteActivity() + ".");
-        System.out.println(" The owner, " + petOwner.ownerName + " and loves " + pet.getType() + " very much. ");
-        System.out.println(" Every time the " + pet.getType() + " is hungry " + petOwner.ownerName + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
-        System.out.println(" Lately, " + pet.getPetName() + " has been feeling ill, so the owner has brought her to " + petDoctor.PetDoctorName + " who is a" + petDoctor.Speciality + ".");
-        System.out.println(" Pet food expires on " + petFood.expiryDate);
+        System.out.println(" The owner, " + petOwner.getOwnerName() + " and loves " + pet.getType() + " very much. ");
+        System.out.println(" Every time the " + pet.getType() + " is hungry " + petOwner.getOwnerName() + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
+        System.out.println(" Lately, " + pet.getPetName() + " has been feeling ill, so the owner has brought her to " + petDoctor.getPetDoctorName() + " who is a" + petDoctor.getSpeciality() + ".");
+        System.out.println(" Pet food expires on " + petFood.getExpiryDate());
 
 
 
