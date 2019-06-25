@@ -9,6 +9,11 @@ public class PetDoctor {
    //getter
 
 
+    public PetDoctor(double skilllevel, double medicinalCost) {
+        this.skilllevel = skilllevel;
+        this.medicinalCost = medicinalCost;
+    }
+
     public String getPetDoctorName() {
         return PetDoctorName;
     }

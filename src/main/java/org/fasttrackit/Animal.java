@@ -5,6 +5,8 @@ import java.sql.SQLOutput;
 public class Animal {
 
 
+
+
   private String type;
   private String petName;
   private double petAge;
@@ -14,7 +16,12 @@ public class Animal {
   private String nameFavoriteFood;
   private String nameFavoriteActivity;
 
-//getteri
+
+    public Animal(String petName) {
+        this.petName = petName;
+    }
+
+    //getteri
     public String getType() {
         return type;
     }

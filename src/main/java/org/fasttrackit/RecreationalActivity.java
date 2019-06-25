@@ -4,6 +4,9 @@ public class RecreationalActivity {
    private String RecreationalActivityName;
    private boolean fun;
 
+
+
+
     //getter
 
     public String getRecreationalActivityName() {

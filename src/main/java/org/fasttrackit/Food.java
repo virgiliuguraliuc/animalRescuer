@@ -11,6 +11,10 @@ public class Food {
    private boolean inStock;
 
 
+    public Food(String foodName) {
+        this.FoodName = foodName;
+    }
+
     //getter
     public String getFoodName() {
         return FoodName;

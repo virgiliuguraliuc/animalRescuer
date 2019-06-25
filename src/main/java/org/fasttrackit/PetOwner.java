@@ -5,7 +5,11 @@ public class PetOwner {
    private double availableCash;
    private double petTraining;
 
-//getter
+    public PetOwner(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    //getter
     public String getOwnerName() {
         return ownerName;
     }
