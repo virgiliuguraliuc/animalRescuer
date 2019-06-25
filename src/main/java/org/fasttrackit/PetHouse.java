@@ -1,12 +1,18 @@
 package org.fasttrackit;
 
 public class PetHouse {
-   public String petHouseName;
-   public String petHouseType;
-   public double petHouseCost;
-   public double getPetHouseHappynessLevel;
+ private String petHouseBiome;
+ private String petHouseName;
+ private String petHouseType;
+ private double petHouseCost;
+ private double PetHouseHappynessLevel;
 
 //getter
+
+
+    public PetHouse(String petHouseBiome) {
+        this.petHouseBiome = petHouseBiome;
+    }
 
     public String getPetHouseName() {
         return petHouseName;
@@ -20,12 +26,16 @@ public class PetHouse {
         return petHouseCost;
     }
 
-    public double getGetPetHouseHappynessLevel() {
-        return getPetHouseHappynessLevel;
+
+    public String getPetHouseBiome() {
+        return petHouseBiome;
     }
 
+    public double getPetHouseHappynessLevel() {
+        return PetHouseHappynessLevel;
+    }
 
-    //setter
+//setter
 
 
     public void setPetHouseName(String petHouseName) {
@@ -40,12 +50,11 @@ public class PetHouse {
         this.petHouseCost = petHouseCost;
     }
 
-    public void setGetPetHouseHappynessLevel(double getPetHouseHappynessLevel) {
-        this.getPetHouseHappynessLevel = getPetHouseHappynessLevel;
+    public void setPetHouseHappynessLevel(double petHouseHappynessLevel) {
+        PetHouseHappynessLevel = petHouseHappynessLevel;
     }
 
-
-
-
-
+    public void setPetHouseBiome(String petHouseBiome) {
+        this.petHouseBiome = petHouseBiome;
+    }
 }

@@ -33,12 +33,12 @@ public class App {
         Food petFood = new Food("kitkat");
         petFood.setFoodPrice(1.2);
         petFood.setFoodQuantity(5);
-        petFood.setCreatedDate(2018,8,1);                //LocalDate.of(2018, 6, 13));
+        petFood.setCreatedDate(2018,6,13);                //LocalDate.of(2018, 6, 13));
         petFood.setExpiryDate(2019,8, 2);
         petFood.setInStock(true);
 
-        RecreationalActivity fun = new RecreationalActivity();
-        fun.setRecreationalActivityName("jumping after birds");
+        RecreationalActivity fun = new RecreationalActivity("jumping after birds");
+        //fun.setRecreationalActivityName("jumping after birds");
         fun.setFun(true);
 
         PetDoctor petDoctor = new PetDoctor(4,1);
@@ -47,11 +47,11 @@ public class App {
        // petDoctor.setSkilllevel(4);
        // petDoctor.setMedicinalCost(1);
 
-        PetHouse catHouse = new PetHouse();
-        catHouse.petHouseType = "cardboardBox";
-        catHouse.petHouseName = "CerealBox";
-        catHouse.petHouseCost = 0;
-        catHouse.getPetHouseHappynessLevel = 1;
+        PetHouse catHouse = new PetHouse(" land ");
+        catHouse.setPetHouseType(" carboardBox ") ;
+        catHouse.setPetHouseName(" Cereal Box ") ;
+        catHouse.setPetHouseCost(0);
+        catHouse.setPetHouseHappynessLevel(1);
 
 
         System.out.println(" The animal needs to live on " + animalEnvironment.preferedBiome + ".");

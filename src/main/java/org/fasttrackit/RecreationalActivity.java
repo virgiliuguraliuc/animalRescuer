@@ -4,10 +4,11 @@ public class RecreationalActivity {
    private String RecreationalActivityName;
    private boolean fun;
 
+    public RecreationalActivity(String recreationalActivityName) {
+        RecreationalActivityName = recreationalActivityName;
+    }
 
-
-
-    //getter
+//getter
 
     public String getRecreationalActivityName() {
         return RecreationalActivityName;
