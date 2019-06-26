@@ -5,10 +5,8 @@ import java.sql.SQLOutput;
 public class Animal {
 
 
-
-
   private String type;
-  private String petName;
+  public String petName;
   private double petAge;
   private double healthLevel;
   private double hungerLevel;

@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import java.net.HttpURLConnection;
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 import static org.fasttrackit.Game.Mesaj;
@@ -25,6 +26,10 @@ public class App {
         pet.setNameFavoriteFood("kitkat");
         pet.setNameFavoriteActivity("jumping after birds");
         pet.setHungerLevel(2);
+
+        Dog dog = new Dog("bark");
+        dog.preferedplace = "land";
+
 
 
         PetOwner petOwner = new PetOwner("Virgiliu");
@@ -61,7 +66,7 @@ public class App {
         System.out.println(" Every time the " + pet.getType() + " is hungry " + petOwner.getOwnerName() + " feeds " + pet.getPetName() + "" + pet.getNameFavoriteFood() + "," + " which is its favorite food.");
         System.out.println(" Lately, " + pet.getPetName() + " has been feeling ill, so the owner has brought her to " + petDoctor.getPetDoctorName() + " who is a" + petDoctor.getSpeciality() + ".");
         System.out.println(" Pet food expires on " + petFood.getExpiryDate());
-
+        System.out.println(" Dog name is " + dog.getPetName());
 
 
         double medicalcare = petDoctor.medicalcare(4, 5, 1);
