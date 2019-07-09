@@ -18,7 +18,11 @@ public class App {
         animalEnvironment.preferedBiome = "land";
 
 
-        Animal pet = new Animal("Fluffy");
+        PetOwner petOwner = new PetOwner("Virgiliu");
+        petOwner.setAvailableCash(100);
+
+
+        Animal pet = new Animal("Purina");
         pet.setType("cat");
         pet.setPetAge(2);
         pet.setHappyness(7);
@@ -30,12 +34,12 @@ public class App {
         Dog dog = new Dog("bark");
         dog.preferedplace = "land";
 
+        Cat cat = new Cat("Miau");
+        cat.preferedplace = "land";
+        cat.nameFavoriteActivity = "playing with string";
 
 
-        PetOwner petOwner = new PetOwner("Virgiliu");
-        petOwner.setAvailableCash(100);
-
-        Food petFood = new Food("kitkat");
+        Food petFood = new Food("Chaika");
         petFood.setFoodPrice(1.2);
         petFood.setFoodQuantity(5);
         petFood.setCreatedDate(2018,6,13);                //LocalDate.of(2018, 6, 13));
@@ -77,10 +81,15 @@ public class App {
         remainingCash2();
 
         Mesaj();
+
         Hunger(1,2,1);
+
         Hunger(pet.getPetAge(),pet.getHappyness(),pet.getHealthLevel());
 
-        System.out.println();
+
+        petOwner.FeedPet(pet.getPetName() ,petFood.getFoodName());
+
+        petOwner.RecreationalActivity(pet.getPetName(), pet.getNameFavoriteActivity());
     }
 
     public static void remainingCash() {
@@ -92,6 +101,9 @@ public class App {
 
 
     }
+
+
+
 
     public static void remainingCash2() {
 

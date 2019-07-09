@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import java.sql.SQLOutput;
+import java.util.Objects;
 
 public class Animal {
 
@@ -96,4 +97,37 @@ public class Animal {
 
 //health method
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "type='" + type + '\'' +
+                ", petName='" + petName + '\'' +
+                ", petAge=" + petAge +
+                ", healthLevel=" + healthLevel +
+                ", hungerLevel=" + hungerLevel +
+                ", happyness=" + happyness +
+                ", nameFavoriteFood='" + nameFavoriteFood + '\'' +
+                ", nameFavoriteActivity='" + nameFavoriteActivity + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Double.compare(animal.petAge, petAge) == 0 &&
+                Double.compare(animal.healthLevel, healthLevel) == 0 &&
+                Double.compare(animal.hungerLevel, hungerLevel) == 0 &&
+                Double.compare(animal.happyness, happyness) == 0 &&
+                Objects.equals(type, animal.type) &&
+                Objects.equals(petName, animal.petName) &&
+                Objects.equals(nameFavoriteFood, animal.nameFavoriteFood) &&
+                Objects.equals(nameFavoriteActivity, animal.nameFavoriteActivity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, petName, petAge, healthLevel, hungerLevel, happyness, nameFavoriteFood, nameFavoriteActivity);
+    }
 }

@@ -1,9 +1,14 @@
 package org.fasttrackit;
 
+
 public class PetOwner {
-   private String ownerName;
-   private double availableCash;
-   private double petTraining;
+    private String ownerName;
+    private double availableCash;
+    private double petTraining;
+
+
+
+
 
     public PetOwner(String ownerName) {
         this.ownerName = ownerName;
@@ -38,12 +43,26 @@ public class PetOwner {
     }
     //training method
 
-//feed method
+    public void FeedPet(String petName, String petFood) {
 
-//
-
+        System.out.println(getOwnerName() + " feeds " + petName + " its favorite food " + petFood + ".");
 
     }
+
+    public void RecreationalActivity(String petName, String FavoriteActivity){
+        System.out.println(getOwnerName() + " plays "+ FavoriteActivity + " with "+ petName );
+
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "PetOwner{" +
+                "ownerName='" + ownerName + '\'' +
+                '}';
+    }
+}
 
 
 

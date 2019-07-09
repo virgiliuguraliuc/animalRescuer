@@ -1,14 +1,10 @@
 package org.fasttrackit;
 
-public class Dog extends Animal {
+public class Cat extends Animal {
     public String preferedplace;
     public String nameFavoriteActivity;
 
-
-    public Dog(String petName) {
+    public Cat(String petName) {
         super(petName);
     }
-
-
-    }
-
+}
