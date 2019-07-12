@@ -43,14 +43,16 @@ public class PetOwner {
     }
     //training method
 
-    public void FeedPet(String petName, String petFood) {
+    public void FeedPet(Animal pet, Food petFood) {
 
-        System.out.println(getOwnerName() + " feeds " + petName + " its favorite food " + petFood + ".");
+        System.out.println(getOwnerName() + pet.getPetName() + " feeds " + petFood.getFoodName()  + " its favorite food "  + ".");
 
     }
 
-    public void RecreationalActivity(String petName, String FavoriteActivity){
-        System.out.println(getOwnerName() + " plays "+ FavoriteActivity + " with "+ petName );
+
+
+    public void RecreationalActivity(Animal pet){
+        System.out.println(getOwnerName() + " plays "+ pet.getNameFavoriteActivity() + " with "+ pet.getPetName() );
 
     }
 
@@ -62,6 +64,8 @@ public class PetOwner {
                 "ownerName='" + ownerName + '\'' +
                 '}';
     }
+
+
 }
 
 

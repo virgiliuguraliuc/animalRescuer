@@ -90,6 +90,9 @@ public class App {
         petOwner.FeedPet(pet.getPetName() ,petFood.getFoodName());
 
         petOwner.RecreationalActivity(pet.getPetName(), pet.getNameFavoriteActivity());
+
+  //      FeedPet3();
+   //     petOwner.FeedPet2();
     }
 
     public static void remainingCash() {
@@ -111,6 +114,9 @@ public class App {
     }
 
 
+  //  public static void FeedPet3(Animal pet, Food petFood) {
+
+  //      System.out.println( + pet + " feeds " + petFood  + " its favorite food "  + ".");
 
 
 
