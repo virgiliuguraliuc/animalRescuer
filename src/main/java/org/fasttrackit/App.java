@@ -87,9 +87,9 @@ public class App {
         Hunger(pet.getPetAge(),pet.getHappyness(),pet.getHealthLevel());
 
 
-        petOwner.FeedPet(pet.getPetName() ,petFood.getFoodName());
+        petOwner.FeedPet(pet, petFood);
 
-        petOwner.RecreationalActivity(pet.getPetName(), pet.getNameFavoriteActivity());
+        petOwner.RecreationalActivity(pet);
 
   //      FeedPet3();
    //     petOwner.FeedPet2();
