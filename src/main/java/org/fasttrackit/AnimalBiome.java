@@ -11,6 +11,11 @@ public class AnimalBiome extends AnimalEnvironment {
         this.animalEnvironment = animalEnvironment;
     }
 
+    public AnimalEnvironment getAnimalEnvironment() {
+        return animalEnvironment;
+    }
 
-
+    public void setAnimalEnvironment(AnimalEnvironment animalEnvironment) {
+        this.animalEnvironment = animalEnvironment;
+    }
 }

@@ -9,6 +9,22 @@ public class Dog extends Animal {
         super(petName);
     }
 
-
+    public String getPreferedplace() {
+        return preferedplace;
     }
+
+    public void setPreferedplace(String preferedplace) {
+        this.preferedplace = preferedplace;
+    }
+
+    @Override
+    public String getNameFavoriteActivity() {
+        return nameFavoriteActivity;
+    }
+
+    @Override
+    public void setNameFavoriteActivity(String nameFavoriteActivity) {
+        this.nameFavoriteActivity = nameFavoriteActivity;
+    }
+}
 
