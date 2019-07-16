@@ -26,5 +26,11 @@ public class Dog extends Animal {
     public void setNameFavoriteActivity(String nameFavoriteActivity) {
         this.nameFavoriteActivity = nameFavoriteActivity;
     }
+
+    @Override
+    public void HappynessLevel() {
+        System.out.println(" waggles tail ");;
+    }
 }
+
 

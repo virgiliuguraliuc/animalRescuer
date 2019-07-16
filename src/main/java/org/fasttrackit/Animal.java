@@ -93,11 +93,12 @@ public class Animal {
         return hungerLevel;
     }
 //happy method
-
+    public void HappynessLevel (){
+        System.out.println(" Animal is happy ");
+    }
 
 //health method
 
-    @Override
     public String toString() {
         return "Animal{" +
                 "type='" + type + '\'' +

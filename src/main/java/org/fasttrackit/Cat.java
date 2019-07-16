@@ -7,4 +7,9 @@ public class Cat extends Animal {
     public Cat(String petName) {
         super(petName);
     }
+
+    @Override
+    public void HappynessLevel() {
+        System.out.println( " Purrs ");
+    }
 }

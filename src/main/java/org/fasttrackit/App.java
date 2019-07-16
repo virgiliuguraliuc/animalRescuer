@@ -39,6 +39,7 @@ public class App {
         cat.nameFavoriteActivity = "playing with string";
 
 
+
         Food petFood = new Food("Chaika");
         petFood.setFoodPrice(1.2);
         petFood.setFoodQuantity(5);
@@ -90,6 +91,9 @@ public class App {
         petOwner.FeedPet(pet, petFood);
 
         petOwner.RecreationalActivity(pet);
+        pet.HappynessLevel();
+        dog.HappynessLevel();
+        cat.HappynessLevel();
 
   //      FeedPet3();
    //     petOwner.FeedPet2();
