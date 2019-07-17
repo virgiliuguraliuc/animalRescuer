@@ -45,7 +45,7 @@ public class PetOwner {
 
     public void FeedPet(Animal pet, Food petFood) {
 
-        System.out.println(getOwnerName() + pet.getPetName() + " feeds " + petFood.getFoodName()  + " its favorite food "  + ".");
+        System.out.println(getOwnerName() + " feeds " + pet.getPetName()  + petFood.getFoodName()  + " its favorite food "  + ".");
 
     }
 

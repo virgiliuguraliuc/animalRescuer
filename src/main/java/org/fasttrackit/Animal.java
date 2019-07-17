@@ -94,7 +94,7 @@ public class Animal {
     }
 //happy method
     public void HappynessLevel (){
-        System.out.println(" Animal is happy ");
+        System.out.println(getPetName() + " Animal is happy ");
     }
 
 //health method
