@@ -29,7 +29,7 @@ public class Dog extends Animal {
 
     @Override
     public void HappynessLevel() {
-        System.out.println(" waggles tail ");;
+        System.out.println(getPetName() + " waggles tail ");
     }
 }
 
