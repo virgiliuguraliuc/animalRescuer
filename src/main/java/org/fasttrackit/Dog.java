@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 public class Dog extends Animal {
+
     public String preferedplace;
     public String nameFavoriteActivity;
 
@@ -31,6 +32,7 @@ public class Dog extends Animal {
     public void HappynessLevel() {
         System.out.println(getPetName() + " waggles tail ");
     }
+
 }
 
 

@@ -31,12 +31,14 @@ public class App {
         pet.setNameFavoriteActivity("jumping after birds");
         pet.setHungerLevel(2);
 
-        Dog dog = new Dog("bark");
-        dog.preferedplace = "land";
 
-        Cat cat = new Cat("Miau");
-        cat.preferedplace = "land";
-        cat.nameFavoriteActivity = "playing with string";
+//AM CASTAT
+        Animal dog = new Dog("Max");
+        ((Dog) dog).preferedplace = "land";
+
+        Animal cat = new Cat("Miau");
+        ((Cat) cat).preferedplace = "land";
+        ((Cat) cat).nameFavoriteActivity = "playing with string";
 
 
 
@@ -128,7 +130,15 @@ public class App {
 
 }
 
-
-
-
-
+//    În proiectul AnimalRescuer, reveniți la metoda main din clasa App unde ați instanțiat câte un obiect din clasa Animal și din sub-clasele acesteia și ați apelat pentru fiecare metoda suprascrisă anterior pentru exprimarea stării de spirit pozitive.
+//
+//        Asigurați-vă acum că variabilele în care sunt stocate referințele obiectelor din sub-clasele clasei Animal sunt toate de tip Animal, iar apoi executați din nou metoda main.
+//
+//
+//
+//        Observați care dintre implementările metodei este folosită în fiecare caz.
+//
+//        Publicați ca răspuns la această temă link-ul repository-ului din GitHub.
+//
+//
+//
