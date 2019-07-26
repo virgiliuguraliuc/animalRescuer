@@ -4,7 +4,6 @@ import java.net.HttpURLConnection;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 
-import static org.fasttrackit.Game.Mesaj;
 import static org.fasttrackit.Animal.Hunger;
 
 /**
@@ -31,8 +30,8 @@ public class App {
         pet.setNameFavoriteActivity("jumping after birds");
         pet.setHungerLevel(2);
 
+///AM CASTAT
 
-//AM CASTAT
         Animal dog = new Dog("Max");
         ((Dog) dog).preferedplace = "land";
 
@@ -82,8 +81,6 @@ public class App {
 
         remainingCash();
         remainingCash2();
-
-        Mesaj();
 
         Hunger(1,2,1);
 
