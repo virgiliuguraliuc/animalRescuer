@@ -10,6 +10,8 @@ public class Dog extends Animal {
         super(petName);
     }
 
+
+
     public String getPreferedplace() {
         return preferedplace;
     }
