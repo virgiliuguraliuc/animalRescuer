@@ -1,7 +1,7 @@
 package org.fasttrackit;
 
 
-import java.sql.SQLOutput;
+
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -372,10 +372,12 @@ private void addFood() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("rescuer available cash is: " + df2.format(rescuer.get(0).getAvailableCash()));
         System.out.println(" So " + savedAnimal.get(0).getPetName() + "feels bad, no problem, there are Doctors here to help, witch one will you call?");
+        String format4 = "|%1$-5s|%2$-20s|%3$-20s|\n";
+        System.out.format(format4, "no.", "Name", "Speciality");
         System.out.println();
 
-        for (int d = 0; d < 4; d++) { // fa cu format ca sa fie fain
-            String format3 = "|%1$-20s|%2$-20s|%3$-20s|%4$-20s|\n";
+                for (int d = 0; d < 4; d++) { // fa cu format ca sa fie fain
+            String format3 = "|%1$-5s|%2$-20s|%3$-20s|\n";
             System.out.format(format3, (d + 1),  petDoctors.get(d).getPetDoctorName(), petDoctors.get(d).getSpeciality());
         }
         System.out.println("....................................................................................................................");
