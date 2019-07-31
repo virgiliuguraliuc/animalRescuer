@@ -20,6 +20,7 @@ public class Animal {
         this.petName = petName;
     }
 
+
     //getteri
     public String getType() {
         return type;

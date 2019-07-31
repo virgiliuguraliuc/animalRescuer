@@ -47,9 +47,14 @@ public class PetOwner {
 
         System.out.println(getOwnerName() + " feeds " + pet.getPetName()  + petFood.getFoodName()  + " its favorite food "  + ".");
 
+
     }
 
+public void TrainPet() {
 
+
+
+}
 
     public void RecreationalActivity(Animal pet){
         System.out.println(getOwnerName() + " plays "+ pet.getNameFavoriteActivity() + " with "+ pet.getPetName() );
