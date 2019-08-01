@@ -60,7 +60,7 @@ public class PetDoctor {
 
         double difficulty = restoredHealth / skilllevel;
 
-        double price = difficulty * medicinalCost;
+        double price =  medicinalCost * difficulty;
 
 
 
@@ -69,7 +69,20 @@ public class PetDoctor {
 
         return price;
 
+    }
 
+    public double medicalcarePrice (double skilllevel, double healthlevel, double medicinalCost) {
+
+        double restoredHealth = 10 - healthlevel;
+
+        double difficulty = restoredHealth / skilllevel;
+
+        double price =  medicinalCost * difficulty;
+
+
+        return price;
 
     }
+
+
 }

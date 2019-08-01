@@ -47,20 +47,25 @@ public class Game {
 
         //4. selectam o casa adecvata pentru animal
         System.out.println( "Its time to select a house for your pet, visit the Store and have a look" );
-        System.out.println("Shelter in store");
-        for (int sh = 0; sh <= 7; sh++) {
-            System.out.println((sh+1) + ". " + shelterInStore.get(sh).getPetHouseName() + " " +  df2.format(shelterInStore.get(sh).getPetHouseCost()) + "$");
-        }
-
-
-        buyAshelter();
+            buyAshelter();
 
         //5. train and play and feed with animal for 5 minutes or so.
         rescuer.get(0).FeedPet(savedAnimal.get(0) ,foodsInStore.get(0));
 
+
+        // while
         Menu();
 
+        savedAnimal.get(0).getHealthLevel();
+        savedAnimal.get(0).getHappyness();
+        savedAnimal.get(0).getHungerLevel();
+        int i =0;
+       do{
 
+
+
+
+       }while (savedAnimal.get(0).getHealthLevel() > 0 && savedAnimal.get(0).getHappyness() > 0 && savedAnimal.get(0).getHungerLevel() < 10);
 
         //6. if good job the animal likes you and likes to stay with you, dies or runs away.
 
@@ -106,7 +111,7 @@ public class Game {
     }
 
 
-public void initAnimal () {
+private void initAnimal () {
 
     System.out.println(" WELCOME  TO  THE PET SHELTER ");
     System.out.println("------------------------------");
@@ -134,6 +139,7 @@ public void initAnimal () {
             animal.setType(RandomDogTypeSelector());
             animal.setPetAge(RandomNumberGenerator());
             animal.setHealthLevel(RandomNumberGenerator());
+            animal.setHappyness(RandomNumberGenerator());
             animal.setNameFavoriteFood("name");        // make it match a random dog food
             animal.setNameFavoriteActivity("");        // make it match a list of land activitys
 
@@ -149,6 +155,7 @@ public void initAnimal () {
             animal.setType(RandomCatTypeSelector());
             animal.setPetAge(RandomNumberGenerator());
             animal.setHealthLevel(RandomNumberGenerator());
+            animal.setHappyness(RandomNumberGenerator());
             animal.setNameFavoriteFood("name");
             animal.setNameFavoriteActivity("");
 
@@ -163,6 +170,7 @@ public void initAnimal () {
             animal.setType(RandomBirdTypeSelector());
             animal.setPetAge(RandomNumberGenerator());
             animal.setHealthLevel(RandomNumberGenerator());
+            animal.setHappyness(RandomNumberGenerator());
             animal.setNameFavoriteFood("name");        // make it match a random dog food
             animal.setNameFavoriteActivity("");        // make it match a list of land activitys
 
@@ -177,6 +185,7 @@ public void initAnimal () {
             animal.setType(RandomFishTypeSelector());
             animal.setPetAge(RandomNumberGenerator());
             animal.setHealthLevel(RandomNumberGenerator());
+            animal.setHappyness(RandomNumberGenerator());
             animal.setNameFavoriteFood("name");        // make it match a random dog food
             animal.setNameFavoriteActivity("");        // make it match a list of land activitys
 
@@ -268,15 +277,9 @@ private void addShelter(){  ///vroiam sa scriu PetHouse
         petShelter.setPetHouseCost((ThreadLocalRandom.current().nextDouble(20,40)));
         shelterInStore.add(petShelter);
     }
-    //VERIFICAM CA TOTUL E OK cu shelter
-    System.out.println( "-------------------");
-    System.out.println("Shelter in store");
-    for (int sh = 0; sh <= 7; sh++) {
-        String format2 = "|%1$-20s|%2$-20s|%3$-20s|%4$-20s|";
-        System.out.format(format2, ((sh+1) + ". "), shelterInStore.get(sh).getPetHouseName(), df2.format(shelterInStore.get(sh).getPetHouseCost()),"$");
+
     }
 
-}
 
 
 private void addFood() {
@@ -290,20 +293,16 @@ private void addFood() {
         petFood.setExpiryDate(2019,7,11);
         foodsInStore.add(petFood);
     }
-    //VERIFICAM CA TOTUL E OK cu foods
-    System.out.println( "------------------");
-    System.out.println("Food store");
-    for (int n = 0; n <= 7; n++) { // fa cu format ca sa fie fain
-        String format = "|%1$-20s|%2$-20s|%3$-20s|%4$-20s|";
-               System.out.format(format, ((n+1) + ". "), foodsInStore.get(n).getFoodName(), df2.format(foodsInStore.get(n).getFoodPrice()) , "$");
+
     }
 
-}
+
 
     private void Menu() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("rescuer available cash is: " + df2.format(rescuer.get(0).getAvailableCash()));
-        System.out.println(" 1.Access Shop " + " 2.Play With " + savedAnimal.get(0).getPetName()  + " 3.Feed "+ savedAnimal.get(0).getPetName() + " 4.Observe" +savedAnimal.get(0).getPetName() + " 5.Train " + savedAnimal.get(0).getPetName() + " 6.MedicalCare " + "7.NextDay");
+        System.out.println(" 1.Access Shop " + " 2.Play With " + savedAnimal.get(0).getPetName()  + " 3.Feed "+ savedAnimal.get(0).getPetName() + " 4.Observe " +savedAnimal.get(0).getPetName() + " 5.Train " + savedAnimal.get(0).getPetName() + " 6.MedicalCare " + " 7.NextDay");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println(" Choose an action ");
         int selector = UserInputInt();
         switch (selector) {
@@ -311,12 +310,15 @@ private void addFood() {
                 Shop();
                 break;
             case 2:
-                rescuer.get(0).RecreationalActivity(savedAnimal.get(0));
+                rescuer.get(0).RecreationalActivity(savedAnimal.get(0),"reeeee");
+                System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 Menu();
                 break;
             case 3:
                 try{
-                rescuer.get(0).FeedPet(savedAnimal.get(0) ,foodOwned.get(0));}
+                rescuer.get(0).FeedPet(savedAnimal.get(0) ,foodOwned.get(0));
+                    System.out.println("-------------------------------------------------------------------------------------------------------------------");
+                Menu();}
                 catch (IndexOutOfBoundsException e){
                     System.out.println(" NO food available! You need to buy some!\n hint: Visit the Shop");
                     Menu();
@@ -326,21 +328,22 @@ private void addFood() {
                 double health = savedAnimal.get(0).getHealthLevel();
                 System.out.println("pet health level is "+  health); // this needs more work
                 savedAnimal.get(0).HappynessLevel();
+                System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 Menu();
                  // aici animalul ar trebui sa ne dea idicii despre starea lui personala
                 break;
             case 5:
-                rescuer.get(0).TrainPet();
+                rescuer.get(0).TrainPet(savedAnimal.get(0), rescuer.get(0));
+                System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 Menu();
                 break;
             case 6:
                 SelectDoctor();
-                break;
-            case 7:
-
+                System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 break;
             default:
-                Menu();
+                System.out.println("The next day...");
+                System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 break;
         }
     }
@@ -357,9 +360,6 @@ private void addFood() {
             break;
             case 2:
                 BuyFood();
-                break;
-            case 3:
-                Menu();
                 break;
             default:
                 Menu();
@@ -397,16 +397,19 @@ private void addFood() {
                 int examine = UserInputInt();
                 switch (examine) {
                     case 1:
-                        System.out.println(savedAnimal.get(0).getPetName() + " health level is " + savedAnimal.get(0).getHealthLevel() + " out of a max of 10.");
+                        System.out.println("Pet name: " + savedAnimal.get(0).getPetName());
+                        System.out.println("Pet type: " + savedAnimal.get(0).getType());
+                        System.out.println("Age: " + savedAnimal.get(0).getPetAge() + " years.");
+                        System.out.println("Diagnosis is: ");
+                        System.out.println(savedAnimal.get(0).getPetName() + " happyness level is : " + savedAnimal.get(0).getHappyness() + " out of a max of 10.");
+                        System.out.println(savedAnimal.get(0).getPetName() + " hunger level is: " + savedAnimal.get(0).getHungerLevel() + " out of a max of 10.");
+                        System.out.println(savedAnimal.get(0).getPetName() + " health level is: " + savedAnimal.get(0).getHealthLevel() + " out of a max of 10.");
                         double remainingCash = rescuer.get(0).getAvailableCash() - (selectedDoctor.get(0).getMedicinalCost() /2);
                         rescuer.get(0).setAvailableCash(remainingCash);
                         selectedDoctorMenu();
 
                         break;
                     case 2:
-                        selectedDoctor.get(0).medicalcare(selectedDoctor.get(0).getSkilllevel(), savedAnimal.get(0).getHealthLevel(), selectedDoctor.get(0).getMedicinalCost());
-                        double remainingCash2 = rescuer.get(0).getAvailableCash() - (selectedDoctor.get(0).getMedicinalCost());
-                        rescuer.get(0).setAvailableCash(remainingCash2);
 
                         selectedDoctorMenu();
                         break;
@@ -417,15 +420,25 @@ private void addFood() {
                 Menu();
                 break;
             case 2:
-                petDoctors.get(0).medicalcare(petDoctors.get(0).getSkilllevel(), petDoctors.get(0).getSkilllevel(), petDoctors.get(0).getMedicinalCost());
-                Menu();
-                break;
-            case 3:
+                double price = ( selectedDoctor.get(0).medicalcarePrice(selectedDoctor.get(0).getSkilllevel(), savedAnimal.get(0).getHealthLevel(), selectedDoctor.get(0).getMedicinalCost()));
+                System.out.println(" The treatment would cost " + price );
+                System.out.println(" 1. Treat the Pet " + " 2. Back to Medical Care");
+                int treat = UserInputInt();
+                switch (treat) {
+                    case 1:
+                        selectedDoctor.get(0).medicalcare(selectedDoctor.get(0).getSkilllevel(), savedAnimal.get(0).getHealthLevel(), selectedDoctor.get(0).getMedicinalCost());
+                        savedAnimal.get(0).setHealthLevel(10);
+                        double remainingCash2 = rescuer.get(0).getAvailableCash() - (selectedDoctor.get(0).getMedicinalCost());
+                        rescuer.get(0).setAvailableCash(remainingCash2);
 
-                Menu();
-                break;
+                        Menu();
+                        break;
+                    default:
+                        selectedDoctorMenu();
+                        break;
+                }
             default:
-                System.out.println("Try again:");
+
                 Menu();
                 break;
         }
@@ -436,6 +449,12 @@ private void addFood() {
     private void buyAshelter() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("rescuer available cash is: " + df2.format(rescuer.get(0).getAvailableCash()));
+        System.out.println("Welcome to the PetHouse Emporium");
+        for (int n = 0; n <= 7; n++) {
+            String format = "|%1$-5s|%2$-50s|%3$-4s %4$-1s|\n";
+            System.out.format(format, ((n + 1) + ". "), shelterInStore.get(n).getPetHouseName(), df2.format(shelterInStore.get(n).getPetHouseCost()), "$");
+            ;
+        }
         int buyShelter = UserInputInt();
         double remainingCash = rescuer.get(0).getAvailableCash() - shelterInStore.get(buyShelter - 1).getPetHouseCost();
         rescuer.get(0).setAvailableCash(remainingCash);
@@ -448,7 +467,7 @@ private void addFood() {
         System.out.println("rescuer available cash is : " + df2.format(rescuer.get(0).getAvailableCash()));
 
         System.out.println("Welcome to the Food store");
-        for (int n = 0; n <= 7; n++) { // fa cu format ca sa fie fain
+        for (int n = 0; n <= 7; n++) {
             String format = "|%1$-5s|%2$-20s|%3$-4s %4$-1s|\n";
             System.out.format(format, ((n+1) + ". "), foodsInStore.get(n).getFoodName(), df2.format(foodsInStore.get(n).getFoodPrice()) , "$");;
 
@@ -470,9 +489,15 @@ private void addFood() {
         }
     }
 
+
+    private void seePetStats (){
+
+
+    }
+
 private int RandomNumberGenerator () {
        Random rng = new Random();
-int randomnumber =  rng.nextInt(10) + 1;
+int randomnumber =  (rng.nextInt(9) + 1);
     return randomnumber;
 }
 
@@ -514,9 +539,9 @@ String[] FishlistType = {"Gelyfish", "Clown fish", "Rainbow Fish", "BubbleFish",
 
 
 //facem niste liste de mancare pentru animale din care vom extrange random numele mancarii
-String[] FoodType = {"PowerDog","HappyDoggy","PURRina","KittyYum","MixedSeeds","FruitYum","GreenWaters", "PredatorFishP",};
+private String[] FoodType = {"PowerDog","HappyDoggy","PURRina","KittyYum","MixedSeeds","FruitYum","GreenWaters", "PredatorFishP",};
 //facem o lista pentru animal Shelters ( va afecta happiness si health pentru)
-String[] ShelterType = {" White Dog house "," Red Dog House "," Cat Post with sleeping Platform "," Cardboard Box "," Guilded bird cage "," Bird cage with tree branch ","Round Fish Bowl with Plants","Rectangle Aqquarium with Castle"};
-String[] DoctorType = {" Canine ", " Feline ", " Avian ", " Aquatic "};
-String[] DoctorName = {" John ", " Madelaine ", " Randolph ", " Gustav "};
+private String[] ShelterType = {" White Dog house "," Red Dog House "," Cat Post with sleeping Platform "," Cardboard Box "," Guilded bird cage "," Bird cage with tree branch ","Round Fish Bowl with Plants","Rectangle Aqquarium with Castle"};
+private String[] DoctorType = {" Canine ", " Feline ", " Avian ", " Aquatic "};
+private String[] DoctorName = {" John ", " Madelaine ", " Randolph ", " Gustav "};
 }

@@ -95,7 +95,14 @@ public class Animal {
     }
 //happy method
     public void HappynessLevel (){
-        System.out.println(getPetName() + " Animal is happy ");
+        if (getHappyness() >= 8 && getHappyness() < 10){
+        System.out.println(getPetName() + " Animal is happy ");}
+        if (getHappyness() >= 5 && getHappyness() < 8){
+            System.out.println(getPetName() + " Animal is content");}
+        if (getHappyness() >= 3 && getHappyness() < 5){
+            System.out.println(getPetName() + " Animal is unhappy ");}
+        if (getHappyness() >= 0 && getHappyness() < 3){
+            System.out.println(getPetName() + " Animal is unhappy ");}
     }
 
 //health method
