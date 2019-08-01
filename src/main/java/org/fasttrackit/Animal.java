@@ -87,14 +87,18 @@ public class Animal {
         this.nameFavoriteActivity = nameFavoriteActivity;
     }
 //hunger method
-    public static double Hunger (double hungermodifier, double exertion, double time) {
-        hungermodifier = 1;
-        double hungerLevel = exertion * time * hungermodifier;
-        System.out.println("hunger level is " + hungerLevel);
-        return hungerLevel;
+    public void observeHungerLevel () {
+        if (getHungerLevel() >= 0 && getHungerLevel() <= 3){
+            System.out.println(getPetName() + " Animal is full ");}
+        if (getHungerLevel() > 3 && getHungerLevel() < 5){
+            System.out.println(getPetName() + " Animal is well fed");}
+        if (getHungerLevel() >= 5 && getHungerLevel() < 7){
+            System.out.println(getPetName() + " Animal is hungry");}
+        if (getHungerLevel() >= 7 && getHungerLevel() <= 9){
+            System.out.println(getPetName() + " Animal is ravenous ");}
     }
 //happy method
-    public void HappynessLevel (){
+    public void observeHappynessLevel (){
         if (getHappyness() >= 8 && getHappyness() < 10){
         System.out.println(getPetName() + " Animal is happy ");}
         if (getHappyness() >= 5 && getHappyness() < 8){
@@ -106,6 +110,18 @@ public class Animal {
     }
 
 //health method
+    public void observeHealthMethod (){
+        if (getHealthLevel() >= 8 && getHealthLevel() < 10){
+            System.out.println(getPetName() + " Animal is healthy ");}
+        if (getHealthLevel() >= 5 && getHealthLevel() < 8){
+            System.out.println(getPetName() + " Animal is reasonably healty");}
+        if (getHealthLevel() >= 3 && getHealthLevel() < 5){
+            System.out.println(getPetName() + " Animal is sick ");}
+        if (getHealthLevel() >= 0 && getHealthLevel() < 3){
+            System.out.println(getPetName() + " Animal is very sick ");}
+    }
+
+
 
     public String toString() {
         return "Animal{" +
