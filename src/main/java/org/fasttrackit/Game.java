@@ -133,7 +133,7 @@ private void initAnimal () {
             animal.setNameFavoriteActivity(RandomLandActivitySelector());        // make it match a list of land activitys
             animal.setMedicineType("Canine ");
             animal.setLivesin("land");
-            System.out.println("the animal is "+ animal.getHealthLevel() + " is health level ");
+       //     System.out.println("the animal is "+ animal.getHealthLevel() + " is health level ");
             System.out.println(" The animal is a " + animal.getType() + " and its name is " + animal.getPetName()+  ".");
             System.out.println(" " + animal.getPetName() + " is " + animal.getPetAge() + " years old and enjoys " + animal.getNameFavoriteActivity() + ".");
 
@@ -243,12 +243,10 @@ private void requireFeeding(){
     rescuer.get(0).FeedPet(savedAnimal.get(0) ,foodOwned.get(0));
 }
 
-    private void requirePlay(){
-// Faceți la fel pentru a-i solicita utilizatorului să se joace cu animalul salvat.
+    private void requirePlay(String activity){
+           rescuer.get(0).RecreationalActivity(savedAnimal.get(0),activity);// Faceți la fel pentru a-i solicita utilizatorului să se joace cu animalul salvat.
     }
 
-    private void requireShelter(){
-    }
 
 private void addShelter(){  ///vroiam sa scriu PetHouse
     for (int s = 0; s <= 7; s++){
@@ -271,6 +269,7 @@ private void addShelter(){  ///vroiam sa scriu PetHouse
     }
 
     }
+
 
 private void addFood() {
     for (int i = 0; i <= 7; i++){
@@ -300,8 +299,8 @@ private void addFood() {
                 savedAnimal.get(0).setHungerLevel(savedAnimal.get(0).getHungerLevel() + 1);
             }
 
-            if ((savedAnimal.get(0).getHealthLevel() >0 & savedAnimal.get(0).getHappyness() >0) & savedAnimal.get(0).getHungerLevel() < 11) {
-                System.out.println("executing while");
+            if ((savedAnimal.get(0).getHealthLevel() > 0 & savedAnimal.get(0).getHappyness() > 0) & savedAnimal.get(0).getHungerLevel() < 11) {
+               // System.out.println("executing while");
                 double cashPerDay = ThreadLocalRandom.current().nextDouble(10,20);
                 rescuer.get(0).setAvailableCash(rescuer.get(0).getAvailableCash() + cashPerDay);
                 savedAnimal.get(0).setHungerLevel(savedAnimal.get(0).getHungerLevel() + ThreadLocalRandom.current().nextInt(1,2));
@@ -310,17 +309,12 @@ private void addFood() {
                 double hap1 = savedAnimal.get(0).getHappyness();
                 double hu1 = savedAnimal.get(0).getHungerLevel();
 
-                System.out.println("a day passes "  + he1 + " "+ hap1 + " " + hu1);
+              //  System.out.println("a day passes "  + he1 + " "+ hap1 + " " + hu1);
                                showMenu();
             } else
                 { EndGame();
                         }return;
         }
-        //EndGame();
-//        double he1 = savedAnimal.get(0).getHealthLevel();
-//        double hap1 = savedAnimal.get(0).getHappyness();
-//        double hu1 = savedAnimal.get(0).getHungerLevel();
-//        System.out.println("FINAL "  + he1 + " "+ hap1 + " " + hu1);
 
     }
 
@@ -337,40 +331,7 @@ private void addFood() {
         if (savedAnimal.get(0).getHungerLevel() >= 10) {
 
             System.out.println(savedAnimal.get(0).getPetName() + "has died due to malnutrition." );
-        }
-    }
-
-    private void EndGame2(){
-        System.out.println("      --G A M E   O V E R   M A N--");
-        double he = savedAnimal.get(0).getHealthLevel();
-        double hap = savedAnimal.get(0).getHappyness();
-        double hu = savedAnimal.get(0).getHungerLevel();
-        System.out.println(he + " "+ hap + " "+ hu);
-    }
-
-
-    private void EndGameCheck(){
-        double he = savedAnimal.get(0).getHealthLevel();
-        double hap = savedAnimal.get(0).getHappyness();
-        double hu = savedAnimal.get(0).getHungerLevel();
-        System.out.println(he + " "+ hap + " "+ hu);
-
-
-
-        if(savedAnimal.get(0).getHealthLevel() <= 0){
-            EndGame();
-            System.out.println(savedAnimal.get(0).getPetName() + " has died due to poor health." );
-        }
-        if( savedAnimal.get(0).getHappyness() <= 0){
-            EndGame();
-            System.out.println(savedAnimal.get(0).getPetName() + " has ran away due to bad treatment." );
-        }
-        if (savedAnimal.get(0).getHungerLevel() >= 10) {
-            EndGame();
-            System.out.println(savedAnimal.get(0).getPetName() + "has died due to malnutrition." );
-        }
-        if (savedAnimal.get(0).getHealthLevel() >0 && savedAnimal.get(0).getHappyness() >0 && savedAnimal.get(0).getHungerLevel() <= 10){
-            showMenu();}
+        }return;
     }
 
     private void showMenu() {
@@ -386,7 +347,9 @@ private void addFood() {
                 enterShop();
                 break;
             case 2:
-                rescuer.get(0).RecreationalActivity(savedAnimal.get(0),"reeeee"); // de adaugat tipurile de activitati si listat
+
+                requirePlay(savedAnimal.get(0).getNameFavoriteActivity()); // de adaugat tipurile de activitati si listat
+
                 System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 showMenu();
                 break;
@@ -416,7 +379,7 @@ private void addFood() {
                 System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 break;
             case 7:
-
+                doGamelogic();
             System.out.println("The next day...");
             System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 break;
@@ -425,7 +388,7 @@ private void addFood() {
                 System.out.println("-------------------------------------------------------------------------------------------------------------------");
                 break;
         }
-        doGamelogic();
+      //  doGamelogic();
     }
 
     private void enterShop(){
@@ -547,22 +510,21 @@ private void addFood() {
         double remainingCash = rescuer.get(0).getAvailableCash() - shelterInStore.get(buyShelter - 1).getPetHouseCost();
         rescuer.get(0).setAvailableCash(remainingCash);
         System.out.println("rescuer remainingCash is: " + df2.format(remainingCash) + " because you bought "+ shelterInStore.get(buyShelter - 1).getPetHouseName());
-        System.out.println("|"+savedAnimal.get(0).getLivesin()+"|"+shelterInStore.get(6).getPetHouseBiome()+"|");
+        System.out.println("|"+savedAnimal.get(0).getLivesin()+"|"+shelterInStore.get(buyShelter -1).getPetHouseBiome()+"|"); //<<debug
 
-//        if (!"water".equals("water") || "water".equals("water") & "water".equals("water")) {
-//            System.out.println("reeeeeeeeeeee");
-//            savedAnimal.get(0).setHealthLevel(-10);
-//            doGamelogic();}
-
-
-          if ( savedAnimal.get(0).getLivesin().equals("water"))
-          {if (savedAnimal.get(0).getLivesin().equals(shelterInStore.get(6).getPetHouseBiome()) || savedAnimal.get(0).getLivesin().equals(shelterInStore.get(7).getPetHouseBiome()) ) {
-              doGamelogic(); }
-              else if (!savedAnimal.get(0).getLivesin().equals(shelterInStore.get(6).getPetHouseBiome()) || !savedAnimal.get(0).getLivesin().equals(shelterInStore.get(7).getPetHouseBiome())){
+//
+          if ( savedAnimal.get(0).getLivesin().equals("water"))   {
+              if (savedAnimal.get(0).getLivesin().equals(shelterInStore.get(buyShelter -1).getPetHouseBiome()) ) {
+              showMenu();
+             // System.out.println("passed this test");
+              }
+              else if (!savedAnimal.get(0).getLivesin().equals(shelterInStore.get(buyShelter -1).getPetHouseBiome()) & !savedAnimal.get(0).getLivesin().equals(shelterInStore.get(buyShelter -1).getPetHouseBiome())){
                   System.out.println("A fish must live in water!");
                   savedAnimal.get(0).setHealthLevel(0);
+                  EndGame();
           }
-           doGamelogic();}
+            //  System.out.println("fish detected but continue");
+           showMenu();}
     }
 
     private void BuyFood() {
