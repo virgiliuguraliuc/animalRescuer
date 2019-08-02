@@ -14,7 +14,24 @@ public class Animal {
   private double happyness;
   private String nameFavoriteFood;
   private String nameFavoriteActivity;
+  private String medicineType;
+  private String livesin;
 
+    public String getLivesin() {
+        return livesin;
+    }
+
+    public void setLivesin(String livesin) {
+        this.livesin = livesin;
+    }
+
+    public String getMedicineType() {
+        return medicineType;
+    }
+
+    public void setMedicineType(String medicineType) {
+        this.medicineType = medicineType;
+    }
 
     public Animal(String petName) {
         this.petName = petName;

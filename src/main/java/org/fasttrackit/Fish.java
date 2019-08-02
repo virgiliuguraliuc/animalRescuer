@@ -37,7 +37,7 @@ public class Fish extends Animal {
             System.out.println(getPetName() + " is hiding in the underwater vegetation ");
         }
         if (getHappyness() >= 0 && getHappyness() < 3) {
-            System.out.println(getPetName() + " jump at your hand as you aproach the aquarium edge and bites you, then hides in a corner ");
+            System.out.println(getPetName() + " jump at your hand as you approach the aquarium edge and bites you, then hides in a corner ");
         }
     }
 

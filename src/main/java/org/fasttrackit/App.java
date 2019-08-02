@@ -4,7 +4,6 @@ import java.net.HttpURLConnection;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 
-import static org.fasttrackit.Animal.Hunger;
 
 /**
  * Hello world!

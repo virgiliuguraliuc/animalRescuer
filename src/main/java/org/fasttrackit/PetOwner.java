@@ -67,26 +67,26 @@ public void TrainPet(Animal pet, PetOwner rescuer) {
 }
 
     public void RecreationalActivity(Animal pet, String activity){
-        System.out.println(getOwnerName() + " plays "+ pet.getNameFavoriteActivity() + " with "+ pet.getPetName() );
+        System.out.println(getOwnerName() + " plays "+ activity + " with "+ pet.getPetName() );
         if (pet.getHappyness() < 10 && pet.getHappyness() >= 8)
         {pet.setHappyness(pet.getHappyness() + 1);
-        pet.HappynessLevel();
+
         }
 
         if (pet.getHappyness() < 8 && pet.getHappyness() >5 )
         {pet.setHappyness(pet.getHappyness() + 1);
-            pet.HappynessLevel();
+
         }
         if (pet.getHappyness() <= 5 && pet.getHappyness() > 3)
         {pet.setHappyness(pet.getHappyness() + 2);
-            pet.HappynessLevel();
+
         }
         if (pet.getHappyness() <= 3 && pet.getHappyness() > 0)
         {pet.setHappyness(pet.getHappyness() + 3);
-            pet.HappynessLevel();
+
         }
         if (pet.getHappyness() == 10){
-        pet.HappynessLevel();
+
         }
     }
 
