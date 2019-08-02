@@ -30,7 +30,7 @@ public class Game {
         AsciiGraphics asciiArt = new AsciiGraphics();
         Art.add(asciiArt);
         //1. initiem User, cerem nume, dam random cash
-        initPetDoctor();
+        initPetDoctor(); // makes a list with 4 doctors with 4 different specialitys
         initRescuer();
 
         //1.1 initiem Food.
@@ -57,7 +57,6 @@ public class Game {
         // we give the chance for the owner to treat and feed the pet then we do the while
         doGamelogic();
 
-      // EndGame();
 
         // Asigurați-vă că în clasa Game, aveți o metodă public void start. În această metodă veți include întreaga logică de funcționare a jocului.
         // Deocamdată, în corpul metodei start apelați metoda initAnimal creată anterior, așa încât, la pornirea jocului, să existe un animal abandonat care trebuie salvat.
@@ -240,6 +239,7 @@ private void initPetDoctor (){
 }
 
 private void requireFeeding(){
+    System.out.println("You feed " + foodOwned.get(0).getFoodName() + " to " + savedAnimal.get(0).getPetName() + ".");
     rescuer.get(0).FeedPet(savedAnimal.get(0) ,foodOwned.get(0));
 }
 
@@ -344,7 +344,7 @@ private void addFood() {
         int selector = UserInputInt();
         switch (selector) {
             case 1:
-                enterShop();
+                accessShop();
                 break;
             case 2:
 
@@ -391,7 +391,7 @@ private void addFood() {
       //  doGamelogic();
     }
 
-    private void enterShop(){
+    private void accessShop(){
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println(rescuer.get(0).getOwnerName() + " available cash is " + df2.format(rescuer.get(0).getAvailableCash()) + "$.");
         System.out.println(" Select an option ");
@@ -441,7 +441,7 @@ private void addFood() {
         switch (medicalAction) {
             case 1:
                 System.out.println("The doctor will examine your pet and give you an accurate reading of its vitals for the sum of " + (selectedDoctor.get(0).getMedicinalCost() / 2) + "$.");
-                System.out.println(" 1. Examine the Pet " + " 2. Back to Medical Care");
+                System.out.println(" 1. Pay for the examination " + " 2. Back to Medical Care");
                 int examine = UserInputInt();
                 double price = ((selectedDoctor.get(0).getMedicinalCost() / 2));
                 if (price > rescuer.get(0).getAvailableCash()){
