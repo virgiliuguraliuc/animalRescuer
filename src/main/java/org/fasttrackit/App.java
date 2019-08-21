@@ -1,16 +1,17 @@
 package org.fasttrackit;
 
-import java.net.HttpURLConnection;
-import java.sql.SQLOutput;
-import java.time.LocalDate;
 
+import org.fasttrackit.domain.Game;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Hello world!
  *
  */
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
 
       Game gamestart = new Game();
       gamestart.Start();

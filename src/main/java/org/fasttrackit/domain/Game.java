@@ -1,12 +1,16 @@
-package org.fasttrackit;
+package org.fasttrackit.domain;
 
 
 
+
+import org.fasttrackit.persistance.AnimalRescuerRepository;
+import org.fasttrackit.service.AnimalRescuerSevice;
+
+import java.io.IOException;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static org.fasttrackit.Animal.*;
 
 
 public class Game {
@@ -23,9 +27,9 @@ public class Game {
     private List<PetDoctor> selectedDoctor = new ArrayList<>();
     private List<Animal> favoriteActivity = new ArrayList<>();
     private List<Animal> favoriteAquaticActivity = new ArrayList<>();
+    AnimalRescuerRepository animalRescuerRepository = new AnimalRescuerRepository(); //asta trebuie facut prin service this is wrong dar acuma testam
 
-
-    public void Start (){
+    public void Start () throws SQLException, IOException, ClassNotFoundException {
         //0.initiem niste grapshics
         AsciiGraphics asciiArt = new AsciiGraphics();
         Art.add(asciiArt);
@@ -44,7 +48,9 @@ public class Game {
         // verificare ca totul e ok
         System.out.println( "The name should be " + rescuer.get(0).getOwnerName());
         System.out.println( " the name of the animal should be " + savedAnimal.get(0).getPetName());
-
+        animalRescuerRepository.createAnimal(savedAnimal.get(0).getPetName(), savedAnimal.get(0).getType(), savedAnimal.get(0).getPetAge(), savedAnimal.get(0).getHealthLevel(),
+                                                savedAnimal.get(0).getHungerLevel(), savedAnimal.get(0).getNameFavoriteFood(), savedAnimal.get(0).getNameFavoriteActivity(),
+                                                savedAnimal.get(0).getMedicineType());
 
         //4. selectam o casa adecvata pentru animal
         System.out.println( "Its time to select a house for your pet, visit the Store and have a look" );
@@ -629,5 +635,51 @@ private String[] LandActitivity = {"Running outside", "Chasing the pointer", "Pl
 private String[] AquaticActivity = {"Hide and seek around aquarium plants", "Blowing bubbles", "Swimming after the food", "Underwater course"};
 
 
+    public List<PetOwner> getRescuer() {
+        return rescuer;
+    }
 
+    public void setRescuer(List<PetOwner> rescuer) {
+        this.rescuer = rescuer;
+    }
+
+    public List<Animal> getSavedAnimal() {
+        return savedAnimal;
+    }
+
+    public void setSavedAnimal(List<Animal> savedAnimal) {
+        this.savedAnimal = savedAnimal;
+    }
+
+    public List<Food> getFoodsInStore() {
+        return foodsInStore;
+    }
+
+    public void setFoodsInStore(List<Food> foodsInStore) {
+        this.foodsInStore = foodsInStore;
+    }
+
+    public List<Food> getFoodOwned() {
+        return foodOwned;
+    }
+
+    public void setFoodOwned(List<Food> foodOwned) {
+        this.foodOwned = foodOwned;
+    }
+
+    public List<PetHouse> getShelterInStore() {
+        return shelterInStore;
+    }
+
+    public void setShelterInStore(List<PetHouse> shelterInStore) {
+        this.shelterInStore = shelterInStore;
+    }
+
+    public List<PetDoctor> getPetDoctors() {
+        return petDoctors;
+    }
+
+    public void setPetDoctors(List<PetDoctor> petDoctors) {
+        this.petDoctors = petDoctors;
+    }
 }

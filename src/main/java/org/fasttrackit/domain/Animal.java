@@ -1,6 +1,5 @@
-package org.fasttrackit;
+package org.fasttrackit.domain;
 
-import java.sql.SQLOutput;
 import java.util.Objects;
 
 public class Animal {
